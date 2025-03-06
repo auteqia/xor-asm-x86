@@ -1,10 +1,10 @@
 section .bss
-    buffer resb 1024       ; Tampon pour stocker les données du fichier
-    key resb 1             ; Stockage de la clé XOR
-    filepath resb 256      ; Stockage du chemin du fichier
-    bytes_read resq 1      ; Stockage du nombre d'octets lus
+    buffer resb 1024       ; buffer pour stocker les données du fichier
+    key resb 1             ; stockage de la clé XOR
+    filepath resb 256      ; stockage du chemin du fichier
+    bytes_read resq 1      ; stockage du nombre d'octets lus
 
-section .rodata   ; 📌 Variables constantes
+section .rodata   ; Variables constantes
     prompt_file db "Entrez le chemin du fichier : ", 0
     prompt_key db "Entrez une clé de chiffrement (1 caractère) : ", 0
     format_str db "%255s", 0       ; format string pour scanf
