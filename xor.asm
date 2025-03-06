@@ -4,7 +4,7 @@ section .bss
     filepath resb 256      ; stockage du chemin du fichier
     bytes_read resq 1      ; stockage du nombre d'octets lus
 
-section .rodata   ; Variables constantes
+section .rodata   ; variables qui ne changerons pas
     prompt_file db "Entrez le chemin du fichier : ", 0
     prompt_key db "Entrez une clé de chiffrement (1 caractère) : ", 0
     format_str db "%255s", 0       ; format string pour scanf
@@ -61,7 +61,7 @@ read_xor_write_loop:
     call fread     ; retourne le nombre d'octets lus dans RAX 
     test rax, rax
     jz close_file  ; quitter si EOF
-    mov [bytes_read], rax  ; Sauvegarde du nombre d'octets lus
+    mov [bytes_read], rax  ; sauvegarde du nombre d'octets lus
 
 
     mov rcx, rax
